@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:id="@+id/group"
+        android:checkableBehavior="single">
+        <item
+            android:checked="true"
+            android:id="@+id/by_distance"
+            android:title="@string/hotels_list_by_distance"/>
+        <item
+            android:id="@+id/by_available_suites"
+            android:title="@string/hotels_list_by_available_suites"/>
+
+    </group>
+</menu>

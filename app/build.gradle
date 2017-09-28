@@ -1,0 +1,85 @@
+import static Library.*
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.1"
+    defaultConfig {
+        applicationId "com.milkmachine.hotels"
+        minSdkVersion 19
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [toothpick_registry_package_name: 'com.milkmachine.hotels']
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+enum Library {
+    MOXY('1.5.3'),
+    SUPPORT('26.0.1'),
+    TOOTHPICK('1.0.7'),
+    RETROFIT2('2.3.0')
+
+    String version
+
+    Library(String version) {
+        this.version = version
+    }
+
+    String toString() {
+        return version
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
+    //ui
+    compile "com.android.support:appcompat-v7:$SUPPORT"
+    compile "com.android.support:design:$SUPPORT"
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+
+    //moxy
+    compile "com.arello-mobile:moxy:$MOXY"
+    kapt "com.arello-mobile:moxy-compiler:$MOXY"
+
+    //conductor
+    compile 'com.bluelinelabs:conductor:2.1.4'
+
+    //di
+    compile "com.github.stephanenicolas.toothpick:toothpick-runtime:$TOOTHPICK"
+    compile "com.github.stephanenicolas.toothpick:smoothie:$TOOTHPICK"
+    kapt "com.github.stephanenicolas.toothpick:toothpick-compiler:$TOOTHPICK"
+
+    //network
+    compile "com.squareup.retrofit2:retrofit:$RETROFIT2"
+    compile "com.squareup.retrofit2:converter-gson:$RETROFIT2"
+    compile "com.squareup.retrofit2:adapter-rxjava2:$RETROFIT2"
+    compile "com.squareup.okhttp3:logging-interceptor:3.8.1"
+
+    //rxjava2
+    compile 'io.reactivex.rxjava2:rxkotlin:2.1.0'
+    compile "io.reactivex.rxjava2:rxjava:2.1.3"
+    compile "io.reactivex.rxjava2:rxandroid:2.0.1"
+
+    //glide
+    compile 'com.github.bumptech.glide:glide:4.0.0'
+    kapt 'com.github.bumptech.glide:compiler:4.0.0'
+}

@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Hotels</string>
+
+    <!--common-->
+    <string name="error">Произошла ошибка</string>
+    <string name="internet_unavailable">Интернет недоступен</string>
+
+    <!--hotels list screen-->
+    <string name="hotels_list_name_with_distance_meters" formatted="false">%s (%d м)</string>
+    <plurals name="hotels_list_distance_available_suites">
+        <item quantity="zero">%d свободных номеров</item>
+        <item quantity="one">%d свободный номер</item>
+        <item quantity="few">%d свободных номера</item>
+        <item quantity="two">%d свободных номера</item>
+        <item quantity="many">%d свободных номеров</item>
+        <item quantity="other">%d свободные номера</item>
+    </plurals>
+    <string name="hotels_list_sort">Сортировать</string>
+    <string name="hotels_list_by_distance">По дистанции</string>
+    <string name="hotels_list_by_available_suites">По свободным номерам</string>
+
+    <!--hotel info screen-->
+    <string name="hotel_info_name_label">Название:</string>
+    <string name="hotel_info_rating_label">Рейтинг:</string>
+    <string name="hotel_info_distance_label">Расстояние до центра:</string>
+    <string name="hotel_info_address_label">Адрес:</string>
+    <string name="hotel_info_available_suites_count_label">Свободных мест:</string>
+    <string name="hotel_info_available_suites_label">Свободные номера:</string>
+    <string name="hotel_info_coordinates_label">Координаты:</string>
+    <string name="hotel_info_coordinates" formatted="false">ш. %s ; д. %s</string>
+    <string name="hotel_info_distance">%d м</string>
+</resources>
